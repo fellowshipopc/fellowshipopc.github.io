@@ -1,10 +1,25 @@
+
+.address {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address a {
+    width: 50px;
+    height: 50px;
+}
+
 #beliefs {
     max-width: 900px;
     line-height: 1.5em;
 }
 
 body {
+    position: absolute;
     margin: 0;
+    padding: 0;
     font-size: 20px;
     background-image: radial-gradient(rgba(22, 56, 104, 0.9)1px, rgba(9, 33, 68, 0.9) 0);
     background-size: 10px 10px;
@@ -13,10 +28,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100vw;
+    width: 100vw;
 }
 
 .canvas {
+    width: 100%;
     max-width: 1200px;
     background-color: white;
     display: flex;
@@ -39,11 +55,19 @@ body {
     justify-content: space-around;
     align-content: center;
     gap: 2em;
-    padding: 1em;
+}
+
+.copy-address-icon {
+    width: 50px;
+}
+
+.copy-address-icon:active {
+    transform: translate(1px, 1px);
+    background-color: white;
+    border-radius: 5px;
 }
 
 .header {
-
     width: 100%;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -62,9 +86,36 @@ body {
     object-fit:contain;
     min-width: 300px;
 }
+#map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
 
-#map {
-    padding-top: 1em;
+#map-container .address {
+    text-align: center;
+    padding: 0 20px;
+}
+
+#map-container .tooltip {
+    background-color: lightgrey;
+}
+
+.elevated-button {
+    padding: 7px;
+    width: 150px;
+    text-align: center;
+    background-color: rgba(22, 56, 104, 0.9);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.elevated-button:hover {
+    background-color: lightgrey;
+    color: rgba(22, 56, 104, 0.9);
 }
 
 .narrow-limit {
@@ -82,9 +133,13 @@ nav a {
     letter-spacing: 3px;
 }
 
+#phone-number-img {
+    width: 10em;
+}
+
 .section {
     background-color: rgba(211, 211, 211, 0.435);
-    padding: 50px 100px !important;
+    padding: 50px 100px;
 }
 
 #service-times {
@@ -97,6 +152,17 @@ nav a {
     font-size: 20px;
 }
 
+.tooltip {
+    visibility: hidden;
+    position: relative;
+    top: -15px;
+    right: -5px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
 #welcome::first-letter {
     font-size: 3em !important;
 }
@@ -105,9 +171,14 @@ nav a {
     max-width: 650px;
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
+    /* #contact .tooltip {
+        right: -200px;
+    } */
+
     .content {
         justify-content: center;
+        align-items: center;
     }
 
     .header img:last-of-type {
@@ -115,6 +186,16 @@ nav a {
     }
 
     .section {
-        padding: 50px !important;
+        padding: 50px;
+    }
+
+    .wide-limit {
+        max-width: 90vw;
+    }
+}
+
+@media (min-width: 769px) {
+    .content {
+        padding: 1em;
     }
 }
