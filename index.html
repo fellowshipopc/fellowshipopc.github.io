@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script>
-            function copyToClipboard(index) {
+            function copyToClipboard(parent) {
                 navigator.clipboard.writeText('5536 Hypoluxo Road, Lake Worth, FL, 33463');
-                document.getElementsByClassName('tooltip')[index].style.visibility = 'visible';
+                parent.getElementsByClassName('tooltip')[0].style.visibility = 'visible';
                 setTimeout(()=> document.getElementsByClassName('tooltip')[index].style.visibility = 'hidden', 1000);
             }
         </script>
@@ -42,7 +42,7 @@
                     <a class="elevated-button" href="https://maps.app.goo.gl/j4fJkBE7MJ9vZxaW7" target="_blank">Go to map</a>
                     <p class="address">5536 Hypoluxo Road, Lake Worth, FL, 33463 
                         &nbsp; &nbsp; 
-                        <a onclick="copyToClipboard(0)"><img class="copy-address-icon" src="assets/copy_icon.svg"><span class="tooltip">Copied!</span></a>
+                        <a onclick="copyToClipboard(this)"><img class="copy-address-icon" src="assets/copy_icon.svg"><span class="tooltip">Copied!</span></a>
                     </p>
                 </div>
                 <div id="service-times" class="section narrow-limit">
@@ -79,7 +79,7 @@
                     <h2>Physical address</h2>
                     <p class="address">5536 Hypoluxo Road, Lake Worth, FL, 33463 
                         &nbsp; &nbsp; 
-                        <a onclick="copyToClipboard(1)"><img class="copy-address-icon" src="assets/copy_icon.svg"><span class="tooltip">Copied!</span></a>
+                        <a onclick="copyToClipboard(this)"><img class="copy-address-icon" src="assets/copy_icon.svg"><span class="tooltip">Copied!</span></a>
                     </p>
                     <br><br>
                     <hr>
