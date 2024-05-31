@@ -38,7 +38,7 @@ body {
 
 .canvas {
     width: 100%;
-    max-width: 1100px;
+    max-width: 69rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -55,6 +55,7 @@ body {
 }
 
 .content {
+    margin: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -90,21 +91,14 @@ body {
 .header {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
 }
 
-.header img:first-of-type {
-    width: 100%;
-    height: 100%; 
-   grid-area: 1 / 1 / 11 / 11;
-   object-fit: cover;
-}
-
-.header img:last-of-type {
-    grid-area: 2 / 7 / 6 / 11;
-    object-fit:contain;
-    min-width: 300px;
+#logo {
+    grid-area: 2 / 8 / 6 / 12;
+    object-fit: cover;
+    min-width: 16rem;
 }
 
 #map-container {
@@ -120,12 +114,16 @@ body {
     padding: 0 20px;
 }
 
+#map-container iframe {
+    width: 100%;
+}
+
 #map-container .tooltip {
     background-color: lightgrey;
 }
 
 .narrow-limit {
-    max-width: 300px;
+    max-width: 33%;
 }
 
 nav {
@@ -169,34 +167,38 @@ nav a {
     text-align: center;
 }
 
+#wallpaper {
+    width: 100%;
+    height: 100%; 
+    grid-area: 1 / 1 / 13 / 13;
+    object-fit: cover;
+}
+
 #welcome::first-letter {
     font-size: 3em !important;
 }
 
 .wide-limit {
-    max-width: 625px;
+    max-width: 70ch;
 }
 
 @media (max-width: 768px) {
-    /* #contact .tooltip {
-        right: -200px;
-    } */
-
     .content {
         justify-content: center;
         align-items: center;
     }
 
-    .header img:last-of-type {
-        grid-area: 2 / 2 / 6 / 11;
+    #logo {
+        grid-area: 2 / 4 / 12 / 12;
+        min-width: 16rem;
+    }
+
+    .narrow-limit {
+        max-width: 100%;
     }
 
     .section {
         padding: 50px;
-    }
-
-    .wide-limit {
-        max-width: 90vw;
     }
 }
 
@@ -204,4 +206,5 @@ nav a {
     .content {
         padding: 1em;
     }
+
 }
