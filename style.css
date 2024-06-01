@@ -16,6 +16,12 @@ html {
     height: 50px;
 }
 
+.background {
+    background-image: radial-gradient(rgba(22, 56, 104, 0.9)1px, rgba(9, 33, 68, 0.9) 0);
+    background-size: 10px 10px;
+    background-position: -10px -10px;
+}
+
 #beliefs {
     line-height: 1.5em;
 }
@@ -26,9 +32,6 @@ body {
     margin: 0;
     padding: 0;
     font-size: 18px;
-    background-image: radial-gradient(rgba(22, 56, 104, 0.9)1px, rgba(9, 33, 68, 0.9) 0);
-    background-size: 10px 10px;
-    background-position: -10px -10px;
     padding-bottom: 100px;
     display: flex;
     flex-direction: column;
@@ -38,7 +41,7 @@ body {
 
 .canvas {
     width: 100%;
-    max-width: 69rem;
+    max-width: 1000px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -55,12 +58,12 @@ body {
 }
 
 .content {
-    margin: 2rem;
+    margin: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-content: center;
-    gap: 2em;
+    align-content: space-between;
+    gap: 50px 5%;
 }
 
 .copy-address-icon {
@@ -96,9 +99,9 @@ body {
 }
 
 #logo {
-    grid-area: 2 / 8 / 6 / 12;
-    object-fit: cover;
-    min-width: 16rem;
+    grid-area: 2 / 8 / 5 / 11;
+    object-fit: fill;
+    width: 100%;
 }
 
 #map-container {
@@ -122,8 +125,8 @@ body {
     background-color: lightgrey;
 }
 
-.narrow-limit {
-    max-width: 33%;
+.narrow-width {
+    max-width: 35%;
 }
 
 nav {
@@ -143,7 +146,7 @@ nav a {
 
 .section {
     background-color: rgba(211, 211, 211, 0.435);
-    padding: 3.125rem 6.25rem;
+    padding: 50px 100px;
 }
 
 .section h1, h2, h3 {
@@ -153,6 +156,7 @@ nav a {
 #service-times {
     line-height: 2em;
     font-size: 1.2em;
+    text-align: center;
 }
 
 #service-times span {
@@ -174,39 +178,68 @@ nav a {
     width: 100%;
     height: 100%; 
     grid-area: 1 / 1 / 13 / 13;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 #welcome::first-letter {
     font-size: 3em !important;
 }
 
-.wide-limit {
+.wide-width {
+    max-width: 60%;
+}
+
+.width-character-limit{
     max-width: 70ch;
 }
 
 @media (max-width: 768px) {
-    .content {
-        margin: 0;
+
+   .content {
+        max-width: 100%;
         justify-content: center;
         align-items: center;
+        margin: 0;
+    }
+
+    .content>*:not(.section) {
+        margin: auto 20px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
     }
 
     #logo {
-        grid-area: 2 / 4 / 12 / 12;
-        min-width: 16rem;
+        width: 75%;
+        max-width: 350px;
     }
 
     .mobile-margin {
-        margin: 0 2em;
+        margin: 0 12px;
     }
 
-    .narrow-limit {
+    .narrow-width {
         max-width: 100%;
     }
 
     .section {
-        padding: 50px;
+        padding: 50px 10px;
+    }
+
+    .section>* {
+        margin: auto 10px;
+    }
+
+    #wallpaper {
+        display: none;
+    }
+
+    .wide-width {
+        max-width: 100%;
     }
 }
 
@@ -214,5 +247,4 @@ nav a {
     .content {
         padding: 1em;
     }
-
 }
