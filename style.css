@@ -16,6 +16,10 @@ html {
     height: 50px;
 }
 
+#address-break-mobile {
+    display: none;
+}
+
 .background {
     background-image: radial-gradient(rgba(22, 56, 104, 0.9)1px, rgba(9, 33, 68, 0.9) 0);
     background-size: 10px 10px;
@@ -55,6 +59,24 @@ body {
     align-items: center;
     flex-wrap: wrap;
     align-content: space-evenly;
+}
+
+#contact {
+    gap: 25px;
+}
+
+#contact hr:first-of-type {
+    width: 50%;
+}
+
+#contact hr:last-of-type {
+    width: 90%;
+}
+
+#contact, #service-times {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content {
@@ -157,6 +179,12 @@ nav a {
     line-height: 2em;
     font-size: 1.2em;
     text-align: center;
+    gap: 20px;
+}
+
+#service-times hr {
+    width: 120%;
+    margin-left: -10%;
 }
 
 #service-times span {
@@ -194,6 +222,18 @@ nav a {
 }
 
 @media (max-width: 768px) {
+    .address {
+        line-height: 1.5em;
+    }
+
+    #address-break-mobile {
+        display: block;
+    }
+
+    #contact {
+        gap: 35px;
+        width: 100%;
+    }
 
    .content {
         max-width: 100%;
@@ -232,6 +272,11 @@ nav a {
 
     .section>* {
         margin: auto 10px;
+    }
+
+    #service-times hr {
+        width: 100%;
+        margin-left: auto;
     }
 
     #wallpaper {
